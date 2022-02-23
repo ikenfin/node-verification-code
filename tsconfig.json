@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "outDir": "dist"
+  }
+}
