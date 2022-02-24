@@ -1,13 +1,19 @@
-const { prepareChunkedCodeGenerator, randomNumbersSequence } = require('./lib')
+const {
+  createGenerator,
+  numericSequence,
+  sequenceFromAlphabet
+} = require('./lib')
 
 /*
   Prepared function to generate ditital verification codes
 */
-const makeNumericVerificationCode = prepareChunkedCodeGenerator(
-  randomNumbersSequence
-)
+const getDigitalCode = createGenerator(numericSequence)
 
 module.exports = {
-  prepareChunkedCodeGenerator,
-  makeNumericVerificationCode
+  // ready to use:
+  getDigitalCode,
+
+  // customize
+  createGenerator,
+  sequenceFromAlphabet,
 }

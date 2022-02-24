@@ -1,8 +1,12 @@
 export type RandomSequenceGeneratorFn = (charCount: number) => string
 export type ChunkedCodeGeneratorFn = (charCount: number) => Buffer
 
-export declare const prepareChunkedCodeGenerator: (
+export declare const createGenerator: (
   fn: RandomSequenceGeneratorFn
 ) => ChunkedCodeGeneratorFn
 
-export declare const randomNumbersSequence: RandomSequenceGeneratorFn
+export declare const numericSequence: RandomSequenceGeneratorFn
+
+export declare const sequenceFromAlphabet: (
+  alphabet: unknown[]
+) => RandomSequenceGeneratorFn
