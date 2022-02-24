@@ -1,1 +1,1 @@
-export declare function makeNumericVerificationCode(charCount: number): string
+export declare function getDigitalCode(charCount: number): string
