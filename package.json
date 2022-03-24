@@ -13,6 +13,7 @@
     "ts:types": "tsc --emitDeclarationOnly --outDir dist",
     "prebundle": "rm -rf dist",
     "bundle": "yarn run ts:types && node bundle.js",
+    "pretest": "yarn run bundle",
     "test": "node test"
   },
   "engines": {
