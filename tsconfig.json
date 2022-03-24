@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "checkJs": true,
-    "emitDeclarationOnly": true,
     "declaration": true,
-    "outDir": "dist"
+    "emitDeclarationOnly": true,
+    "rootDirs": ["lib", "."],
+    "outFile": "./dist/index.d.ts",
   }
 }
