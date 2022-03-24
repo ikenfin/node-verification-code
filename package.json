@@ -9,6 +9,13 @@
   },
   "version": "1.0.0",
   "license": "MIT",
+  "keywords": [
+    "node",
+    "verification code",
+    "generate code",
+    "generator",
+    "sms code"
+  ],
   "scripts": {
     "ts:types": "tsc --emitDeclarationOnly --outDir dist",
     "prebundle": "rm -rf dist",
