@@ -3,7 +3,7 @@ const {
   createGenerator,
   numericSequence,
   sequenceFromAlphabet
-} = require('../lib')
+} = require('../dist/node-verification-code.cjs')
 
 /*
   Utils
