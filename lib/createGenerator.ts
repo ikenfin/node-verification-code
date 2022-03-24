@@ -1,3 +1,4 @@
+import type { RandomSequenceGeneratorFn, ChunkedCodeGeneratorFn } from './types'
 /*
   Because we use 10 ** size - 1 formula to get digits count
   resulting values can exceed safe integer limit. To prvent such situations we limit max chunk size to 10
@@ -12,7 +13,7 @@ const MAX_CHUNK_SIZE = 10
     const makeVerificationCode = prepareChunkedCodeGenerator(myRandomSymbolsGenerator)
     makeVerificationCode(10)
 */
-const createGenerator = (sequenceGenerator) => (size) => {
+export const createGenerator = (sequenceGenerator: RandomSequenceGeneratorFn): ChunkedCodeGeneratorFn => (size = 0) => {
   const resultBuffer = Buffer.alloc(size * 8)
   const iterations = Math.ceil(size / MAX_CHUNK_SIZE)
 
@@ -34,8 +35,4 @@ const createGenerator = (sequenceGenerator) => (size) => {
   }
 
   return resultBuffer.slice(0, offset)
-}
-
-module.exports = {
-  createGenerator
 }
