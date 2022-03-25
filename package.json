@@ -1,11 +1,21 @@
 {
   "name": "node-verification-code",
+  "description": "Simple library to generate verification codes without dependencies for Node.js",
   "main": "./dist/node-verification-code.cjs",
   "module": "./dist/node-verification-code.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     "require": "./dist/node-verification-code.cjs",
     "import": "./dist/node-verification-code.mjs"
+  },
+  "author": {
+    "name": "Tominov Sergey",
+    "url": "https://ikfi.ru"
+  },
+  "homepage": "https://github.com/ikenfin/node-verification-code",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ikenfin/node-verification-code"
   },
   "version": "1.0.1",
   "license": "MIT",
