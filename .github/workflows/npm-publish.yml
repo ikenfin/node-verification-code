@@ -31,6 +31,9 @@ jobs:
           always-auth: true
       - run: yarn install --frozen-lockfile
       - run: yarn bundle
-      - run: yarn publish --non-interactive # cant publish via yarn :(
+      - run: |
+          yarn config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
+          yarn publish --non-interactive
         env:
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          CI: true
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
