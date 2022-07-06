@@ -15,6 +15,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          cache: 'yarn'
       - run: yarn install --frozen-lockfile
       - run: yarn lint # lint the code
       - run: yarn test # bundle provided by pretest script
@@ -27,8 +28,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: https://registry.npmjs.org/
+          registry-url: https://registry.npmjs.org
           always-auth: true
+          cache: 'yarn'
       - run: yarn install --frozen-lockfile
       - run: yarn bundle
       - run: yarn publish --access public
