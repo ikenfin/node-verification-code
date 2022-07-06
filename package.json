@@ -17,9 +17,6 @@
     "type": "git",
     "url": "https://github.com/ikenfin/node-verification-code"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/ikenfin"
-  },
   "version": "1.0.8",
   "license": "MIT",
   "keywords": [
