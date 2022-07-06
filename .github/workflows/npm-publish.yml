@@ -31,9 +31,7 @@ jobs:
           always-auth: true
       - run: yarn install --frozen-lockfile
       - run: yarn bundle
-      - run: |
-          yarn config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          yarn publish --non-interactive
+      - run: npm publish
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
