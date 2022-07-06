@@ -33,7 +33,7 @@ jobs:
           cache: 'yarn'
       - run: yarn install --frozen-lockfile
       - run: yarn bundle
-      - run: yarn publish --access public
+      - run: npm publish --access public
         env:
           CI: true
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
