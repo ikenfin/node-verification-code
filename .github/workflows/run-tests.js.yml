@@ -26,5 +26,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm test # bundle provided by pretest script
+    - run: yarn install --frozen-lockfile
+    - run: yarn test # bundle provided by pretest script
