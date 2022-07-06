@@ -49,12 +49,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: https://npm.pkg.github.com/
+          registry-url: 'https://npm.pkg.github.com'
           always-auth: true
           cache: 'yarn'
       - run: yarn install --frozen-lockfile
       - run: yarn bundle
-      - run: yarn publish --non-interactive --no-git-tag-version
+      - run: yarn publish
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
