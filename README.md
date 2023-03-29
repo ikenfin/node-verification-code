@@ -1,7 +1,6 @@
 # Verification code generator for Node.js
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
-[![Twitter: realtominoff](https://img.shields.io/twitter/follow/realtominoff.svg?style=social)](https://twitter.com/realtominoff)
 
 > Simple library to generate verification codes without dependencies for Node.js.
 
@@ -62,7 +61,6 @@ yarn test
 👤 **Tominov Sergey**
 
 * Website: https://ikfi.ru
-* Twitter: [@realtominoff](https://twitter.com/realtominoff)
 * Github: [@ikenfin](https://github.com/ikenfin)
 
 ## Show your support
