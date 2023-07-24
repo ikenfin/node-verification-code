@@ -1,5 +1,6 @@
 import type { RandomSequenceGeneratorFn} from './types'
-import { randomInt } from 'crypto'
+
+import { randomInt } from 'node:crypto'
 
 /*
 	Generate random numbers sequence

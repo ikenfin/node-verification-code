@@ -4,8 +4,8 @@ const commonConfig = {
   entryPoints: [ 'node-verification-code.ts' ],
   bundle: true,
   splitting: false,
-  external: [ 'crypto' ],
-  target: [ 'node10.4' ],
+  external: [ 'node:crypto', 'node:buffer' ],
+  target: [ 'node12.22' ],
   treeShaking: true
 }
 
