@@ -1,4 +1,6 @@
 const assert = require('assert').strict
+const { Buffer } = require('node:buffer')
+
 const {
   createGenerator,
   numericSequence,
@@ -10,6 +12,7 @@ const {
 */
 const isFunction = (f) => typeof f === 'function'
 const mkArray = (size) => Array(size).fill(0)
+
 /*
   Simple module tests
 */
