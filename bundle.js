@@ -5,7 +5,7 @@ const commonConfig = {
   bundle: true,
   splitting: false,
   external: [ 'node:crypto', 'node:buffer' ],
-  target: [ 'node12.22' ],
+  target: [ 'node14.21.3' ],
   treeShaking: true
 }
 
