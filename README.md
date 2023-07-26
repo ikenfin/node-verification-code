@@ -1,10 +1,17 @@
 # Verification code generator for Node.js
+
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 
 > Simple library to generate verification codes without dependencies for Node.js.
 
 This library utilizes in-built Node.js module `crypto` to effective random numeric sequences generation, but also you can implement your own function to generate random sequences, using simple contract: `function (charCount: number <MAX 10>) => string`
+
+### Minimal nodejs versions
+
+From version 1.1.4 support of legacy nodejs was dropped. Now minimal version of nodejs is 14.
+
+If you need this library for node 12 - please downgrade to version 1.1.2!
 
 ## Usage
 
@@ -42,8 +49,6 @@ const mathRandomSequence = (charCount) => Math.floor(Math.random() * charCount)
 const makeMyOwnVerificationCode = createGenerator(mathRandomSequence)
 ```
 
-
-
 ## Install
 
 ```sh
@@ -67,6 +72,6 @@ yarn test
 
 Give a ⭐️ if this project helped you!
 
+---
 
-***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
