@@ -31,7 +31,8 @@
     "prebundle": "rm -rf dist",
     "bundle": "npm run ts:types && node bundle.js",
     "pretest": "npm run bundle",
-    "test": "node test",
+    "test": "NODE_V8_COVERAGE=coverage node --test test/*.test.js",
+    "coverage": "npm run test && c8 report --temp-directory=coverage",
     "lint": "eslint ./lib/**/*.ts",
     "prepare": "is-ci || husky install"
   },
@@ -42,6 +43,7 @@
     "@types/node": "^17.0.21",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
+    "c8": "^10.1.2",
     "esbuild": "^0.14.23",
     "eslint": "^8.19.0",
     "husky": "^7.0.4",
