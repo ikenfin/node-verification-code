@@ -15,7 +15,7 @@ If you need this library for node 12 - please downgrade to version 1.1.2!
 
 ## Usage
 
-If digital codes is only what you need - just use **getDigitalCode**
+If digital codes is only what you need - just use shortcut **getDigitalCode**
 
 ```js
 const { getDigitalCode } = require('node-verification-code')
@@ -23,6 +23,15 @@ const smsVerificationCodeBuffer = getDigitalCode(4) // Will produce Buffer conta
 
 // sendSms(phone, smsVerificationCodeBuffer.toString())
 ```
+
+## Own alphabet
+
+Library is built on two entites:
+
+* **generator** - function which generates `Buffer` with random content any length. It utilises sequence-function to produce random sequences
+* **sequence-function** - function which provides sequence of random elements (*up to 10 symbols*)
+
+> Althoug sequence size is limited to 10 symbols, it does'nt mean you cannot generate longer codes.
 
 You can create custom generator in two ways. Simpliest - using **sequenceFromAlphabet** helper function as follows:
 
@@ -35,7 +44,7 @@ const emojiSequence = sequenceFromAlphabet(['🐶', '🐱', '🐭', '🐹', '�
 // create generator from sequence function
 const getEmojiCode = createGenerator(emojiSequence)
 
-getEmojiCode(4) // -> for example: 🐹🐭🐹🐰
+getEmojiCode(4).toString() // -> for example: 🐹🐭🐹🐰
 ```
 
 You can also create your sequence function by hand:
@@ -44,9 +53,11 @@ You can also create your sequence function by hand:
 const { createGenerator } = require('node-verification-code')
 
 // only shown as example, don't do this in real code - crypto module produces better results
-const mathRandomSequence = (charCount) => Math.floor(Math.random() * charCount)
+const mathRandomSequence = (charCount) => '0'.repeat(charCount).replaceAll('0', () => Math.floor(Math.random() * 10))
 
 const makeMyOwnVerificationCode = createGenerator(mathRandomSequence)
+
+makeMyOwnVerificationCode(4).toString() // -> for example: '2108'
 ```
 
 ## Install
