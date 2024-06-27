@@ -15,10 +15,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'yarn'
-      - run: yarn install --frozen-lockfile
-      - run: yarn lint # lint the code
-      - run: yarn test # bundle provided by pretest script
+          cache: "npm"
+      - run: npm ci
+      - run: npm run lint # lint the code
+      - run: npm run test # bundle provided by pretest script
 
   publish-npm:
     needs: build
@@ -29,10 +29,10 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org
-          cache: 'yarn'
-      - run: yarn install --frozen-lockfile
-      - run: yarn bundle # final create bundle
-      - run: yarn publish --non-interactive --no-git-tag-version
+          cache: "npm"
+      - run: npm ci
+      - run: npm run bundle # final create bundle
+      - run: npm run publish
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
@@ -49,13 +49,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: "https://npm.pkg.github.com"
           always-auth: true
-          cache: 'yarn'
-      - run: yarn install --frozen-lockfile
-      - run: yarn bundle
-      - run: yarn publish
+          cache: "npm"
+      - run: npm ci
+      - run: npm run bundle
+      - run: npm run publish
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

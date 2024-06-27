@@ -29,8 +29,8 @@
   "scripts": {
     "ts:types": "tsc --emitDeclarationOnly --outDir dist",
     "prebundle": "rm -rf dist",
-    "bundle": "yarn run ts:types && node bundle.js",
-    "pretest": "yarn run bundle",
+    "bundle": "npm run ts:types && node bundle.js",
+    "pretest": "npm run bundle",
     "test": "node test",
     "lint": "eslint ./lib/**/*.ts",
     "prepare": "is-ci || husky install"

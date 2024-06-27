@@ -1,4 +1,5 @@
 # Node.js библиотека для генерации кодов подтверждения
+
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 
@@ -54,13 +55,13 @@ const makeMyOwnVerificationCode = createGenerator(mathRandomSequence)
 ## Установка
 
 ```sh
-yarn add node-verification-code
+npm install node-verification-code
 ```
 
 ## Модульное тестирование
 
 ```sh
-yarn test
+npm run test
 ```
 
 ## Автор
@@ -75,6 +76,6 @@ yarn test
 
 Поставьте ⭐️ этому репозиторию, если проект помог вам!
 
+---
 
-***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

@@ -52,13 +52,13 @@ const makeMyOwnVerificationCode = createGenerator(mathRandomSequence)
 ## Install
 
 ```sh
-yarn add node-verification-code
+npm install node-verification-code
 ```
 
 ## Run tests
 
 ```sh
-yarn test
+npm run test
 ```
 
 ## Author
