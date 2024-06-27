@@ -31,9 +31,9 @@ Library is built on two entites:
 * **generator** - function which generates `Buffer` with random content any length. It utilises sequence-function to produce random sequences
 * **sequence-function** - function which provides sequence of random elements (*up to 10 symbols*)
 
-> Althoug sequence size is limited to 10 symbols, it does'nt mean you cannot generate longer codes.
+> Although sequence size is limited to 10 symbols, it doesn't mean you cannot generate longer codes. Generator will call sequence-function multiple times to get code with desired length.
 
-You can create custom generator in two ways. Simpliest - using **sequenceFromAlphabet** helper function as follows:
+So, to create own code generator you will need to create your own sequence-function. To do so you can simply use **sequenceFromAlphabet** shortcut as follows:
 
 ```js
 const { sequenceFromAlphabet, createGenerator } = require('node-verification-code')
@@ -47,16 +47,23 @@ const getEmojiCode = createGenerator(emojiSequence)
 getEmojiCode(4).toString() // -> for example: 🐹🐭🐹🐰
 ```
 
-You can also create your sequence function by hand:
+Also, you can create your own sequence function by hand, just implement `(number) => string` contract and pass it to `createGenerator`:
 
 ```js
 const { createGenerator } = require('node-verification-code')
 
-// only shown as example, don't do this in real code - crypto module produces better results
+/*
+  !!! only shown as example, don't do this in real code - crypto module produces better results
+
+  Sequence-function contract implementation:
+  (number) => string
+*/
 const mathRandomSequence = (charCount) => '0'.repeat(charCount).replaceAll('0', () => Math.floor(Math.random() * 10))
 
+// Create code generator from sequence
 const makeMyOwnVerificationCode = createGenerator(mathRandomSequence)
 
+// Generate code
 makeMyOwnVerificationCode(4).toString() // -> for example: '2108'
 ```
 
